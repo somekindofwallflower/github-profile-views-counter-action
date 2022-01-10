@@ -15642,12 +15642,12 @@ const git = __nccwpck_require__(1193);
 let commitGit = function () {
     // let INSIGHT_BOT_USERNAME = 'github-actions[bot]';
     // let INSIGHT_BOT_EMAIL = '41898282+github-actions[bot]@users.noreply.github.com';
-    let INSIGHT_BOT_USERNAME = 'somekindofwallflower';
-    let INSIGHT_BOT_EMAIL = 'someone.ana13@gmail.com';
+    // let INSIGHT_BOT_USERNAME = 'somekindofwallflower';
+    // let INSIGHT_BOT_EMAIL = 'someone.ana13@gmail.com';
     let commit = async function (message) {
         core.info(`Git Commit ${message}`)
         try {
-            await git.commit(INSIGHT_BOT_USERNAME, INSIGHT_BOT_EMAIL, message);
+            await git.commit('somekindofwallflower', 'someone.ana13@gmail.com', message);
         } catch (error) {
             core.info(error);
         }
@@ -15945,8 +15945,8 @@ const requestCommits = __nccwpck_require__(200);
 const RequestModel = __nccwpck_require__(2480);
 let verifyCommits = (function () {
     const URL = '/commits?path=cache';
-    // const USERNAME = 'github-actions[bot]';
-    const USERNAME = 'somekindofwallflower';
+    const USERNAME = 'github-actions[bot]';
+    // const USERNAME = 'somekindofwallflower';
     let verify = async function (header, username, repository) {
         let request = new RequestModel(URL, username, repository);
         let responseCommits = await requestCommits.requestResponseCommits(header, request);
