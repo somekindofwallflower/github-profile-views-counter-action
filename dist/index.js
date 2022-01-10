@@ -15640,8 +15640,10 @@ module.exports = svgFile;
 const core = __nccwpck_require__(2186);
 const git = __nccwpck_require__(1193);
 let commitGit = function () {
-    let INSIGHT_BOT_USERNAME = 'github-actions[bot]';
-    let INSIGHT_BOT_EMAIL = '41898282+github-actions[bot]@users.noreply.github.com';
+    // let INSIGHT_BOT_USERNAME = 'github-actions[bot]';
+    // let INSIGHT_BOT_EMAIL = '41898282+github-actions[bot]@users.noreply.github.com';
+    let INSIGHT_BOT_USERNAME = 'somekindofwallflower';
+    let INSIGHT_BOT_EMAIL = 'someone.ana13@gmail.com';
     let commit = async function (message) {
         core.info(`Git Commit ${message}`)
         try {
@@ -15656,6 +15658,7 @@ let commitGit = function () {
     };
 }();
 module.exports = commitGit;
+
 
 /***/ }),
 
@@ -15828,7 +15831,6 @@ module.exports = requestCommits;
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const core = __nccwpck_require__(2186);
-const input = __nccwpck_require__(3664);
 const requestRepositoryOctokit = __nccwpck_require__(3611);
 const verifyCommitsOctokit = __nccwpck_require__(8221);
 const requestViewsOctokit = __nccwpck_require__(7776);
@@ -15889,6 +15891,7 @@ let requestOctokit = (function () {
 })();
 module.exports = requestOctokit;
 
+
 /***/ }),
 
 /***/ 3611:
@@ -15942,7 +15945,8 @@ const requestCommits = __nccwpck_require__(200);
 const RequestModel = __nccwpck_require__(2480);
 let verifyCommits = (function () {
     const URL = '/commits?path=cache';
-    const USERNAME = 'github-actions[bot]';
+    // const USERNAME = 'github-actions[bot]';
+    const USERNAME = 'somekindofwallflower';
     let verify = async function (header, username, repository) {
         let request = new RequestModel(URL, username, repository);
         let responseCommits = await requestCommits.requestResponseCommits(header, request);
@@ -15962,6 +15966,7 @@ let verifyCommits = (function () {
     };
 })();
 module.exports = verifyCommits;
+
 
 /***/ }),
 
